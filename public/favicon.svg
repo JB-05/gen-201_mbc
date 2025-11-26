@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="electricGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7303c0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f7931e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Electric shock bolt -->
+  <path d="M16 2 L8 16 L14 16 L10 30 L24 16 L18 16 L22 2 Z" 
+        fill="url(#electricGradient)" 
+        stroke="#ffffff" 
+        stroke-width="0.5"
+        stroke-linejoin="round"/>
+  
+  <!-- Electric sparks -->
+  <circle cx="6" cy="8" r="1" fill="#ff6b35" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="26" cy="24" r="1" fill="#f7931e" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.1;0.6" dur="1.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="28" cy="6" r="0.8" fill="#7303c0" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="0.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="4" cy="26" r="0.8" fill="#ff6b35" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.1;0.5" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

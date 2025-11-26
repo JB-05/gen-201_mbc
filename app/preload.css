@@ -1,0 +1,11 @@
+/* Prevent flash of content */
+#__next {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Ensure loading screen is visible immediately */
+.loading-screen {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

@@ -1,0 +1,319 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #7303c0 0%,
+    #928dab 50%,
+    #7303c0 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientFlow 8s linear infinite;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+/* Background Animation */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.1) translate(-2%, -2%);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes livePulse {
+  0% {
+    background-color: #ff0000;
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+  }
+  70% {
+    background-color: #ff0000;
+    box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+  }
+  100% {
+    background-color: #ff0000;
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 4px rgba(255, 0, 0, 0.7);
+  }
+  50% {
+    text-shadow: 0 0 8px #ff0000, 0 0 12px rgba(255, 0, 0, 0.5);
+  }
+}
+
+@keyframes flowingLine {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+@keyframes progressPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(115, 3, 192, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(115, 3, 192, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(115, 3, 192, 0);
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 267 97% 38%;
+    --card: 0 0% 5%;
+    --card-foreground: 267 97% 38%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 267 97% 38%;
+    --primary: 267 97% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 245 14% 61%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 245 14% 61%;
+    --accent: 267 97% 38%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 267 97% 38%;
+    --input: 0 0% 15%;
+    --ring: 267 97% 38%;
+    --radius: 0;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-futuristic {
+    background: linear-gradient(135deg, #000000 0%, #7303c0 50%, #000000 100%);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(to right, #928dab, #7303c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .border-gradient {
+    border-image: linear-gradient(45deg, #7303c0, #928dab) 1;
+  }
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 0 #7303c0, -2px 0 #928dab;
+    transform: translate(0);
+  }
+  20% {
+    text-shadow: -2px 0 #7303c0, 2px 0 #928dab;
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    text-shadow: 2px 0 #7303c0, -2px 0 #928dab;
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    text-shadow: -2px 0 #7303c0, 2px 0 #928dab;
+    transform: translate(2px, 2px);
+  }
+  80% {
+    text-shadow: 2px 0 #7303c0, -2px 0 #928dab;
+    transform: translate(2px, -2px);
+  }
+  100% {
+    text-shadow: none;
+    transform: translate(0);
+  }
+}
+
+.glitch {
+  animation: glitch 2s infinite;
+}
+
+/* Typing Animation */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid white;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typewriter 3s steps(40, end), blink-caret 1s step-end infinite;
+}
+
+/* Sharp geometric shapes */
+.clip-polygon {
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 100%, 20px 100%);
+}
+
+.clip-arrow {
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 50%, calc(100% - 30px) 100%, 0 100%);
+}
+
+/* Futuristic gradient */
+.bg-gradient-futuristic {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+}
+
+/* Optimized Neural Network Animation */
+@keyframes nodeGlow {
+  0%, 100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale3d(1.2, 1.2, 1);
+    opacity: 0.9;
+  }
+}
+
+@keyframes pathFlow {
+  0% {
+    stroke-dashoffset: 200;
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.4;
+  }
+}
+
+/* Optimized Grid Animation */
+@keyframes gridFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(2px, 2px, 0);
+  }
+}
+
+/* Optimized Gradient Animation */
+@keyframes gradientMove {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Scan line animation */
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Desktop scan line */
+@media (min-width: 768px) {
+  @keyframes scan {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #ffffff, transparent);
+    animation: scan 2s ease-in-out infinite;
+  }
+}
+
+/* Mobile scan line */
+@media (max-width: 767px) {
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #ffffff, transparent);
+    animation: scan 2s ease-in-out infinite;
+  }
+}
